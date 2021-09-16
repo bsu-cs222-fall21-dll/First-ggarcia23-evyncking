@@ -2,4 +2,4 @@
 
 FirstProject
 
-Created by Evyn and Gerardo
+Created by Evyn and Gerardo Garcia
