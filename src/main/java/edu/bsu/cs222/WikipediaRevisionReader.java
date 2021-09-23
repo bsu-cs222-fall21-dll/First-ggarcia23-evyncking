@@ -31,7 +31,7 @@ public class WikipediaRevisionReader {
             URL url = new URL(encodedURLString);
             URLConnection connection = url.openConnection();
             connection.setRequestProperty("User-Agent",
-                    "WikipediaRevisionReader/0.1 (gagarcia3@bsu.edu)");
+                    "WikipediaRevisionReader/0.1 (ecking@bsu.edu; gagarcia3@bsu.edu)");
             InputStream inputStream = connection.getInputStream();
             WikipediaRevisionParser parser = new WikipediaRevisionParser();
             String timestamp = parser.parse(inputStream);

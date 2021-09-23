@@ -21,6 +21,6 @@ public class WikipediaRevisionParserTest {
         WikipediaUsernameParser parser = new WikipediaUsernameParser();
         InputStream testDataStream =  Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
         String user = parser.parse(testDataStream);
-        Assertions.assertEquals("MusikBot II", user);
+        Assertions.assertEquals("75.172.213.218", user);
     }
 }

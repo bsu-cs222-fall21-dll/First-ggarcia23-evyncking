@@ -9,6 +9,6 @@ import java.io.InputStream;
 public class WikipediaUsernameParser {
     public String parse(InputStream  testDataStream) throws IOException {
         JSONArray result = (JSONArray) JsonPath.read(testDataStream, "$..user");
-        return result.get(2).toString();
+        return result.get(0).toString();
     }
 }
