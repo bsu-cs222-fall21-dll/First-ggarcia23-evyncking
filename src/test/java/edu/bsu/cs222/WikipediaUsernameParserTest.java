@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class FindNameTest {
+public class WikipediaUsernameParserTest {
     @Test
     public void testFindName() throws IOException {
         WikipediaUsernameParser parser = new WikipediaUsernameParser();
