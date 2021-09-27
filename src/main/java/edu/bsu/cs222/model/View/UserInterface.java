@@ -1,10 +1,8 @@
-package edu.bsu.cs222.model;
+package edu.bsu.cs222.model.View;
 
 public class UserInterface {
-    public String WikiUI() {
-
+    public String wikiUI() {
         return String.format("Search Wikipedia for Article Page: ");
-
     }
 
     public void printMessage(String message){
