@@ -1,11 +1,7 @@
 package edu.bsu.cs222.model.Model;
 
 import com.jayway.jsonpath.JsonPath;
-import edu.bsu.cs222.model.Model.WikipediaRevision;
 import net.minidev.json.JSONArray;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class WikipediaRevisionParser{
@@ -19,15 +15,14 @@ public class WikipediaRevisionParser{
         ArrayList<WikipediaRevision> revisionsList = new ArrayList<>();
 
         int length = findSizeOfArray(revisionJSON);
-        for(int i=0;i<=length;i++) {
 
+        for(int i=0;i<=length;i++) {
             WikipediaRevision revision = new WikipediaRevision(JsonPath.read(revisionJSON,String.format("$..[%d]",i)));
             revisionsList.add(revision);
             if (i==30){
                 break;
             }
         }
-
         return revisionsList;
     }
 

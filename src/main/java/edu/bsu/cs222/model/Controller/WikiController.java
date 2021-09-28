@@ -3,7 +3,6 @@ package edu.bsu.cs222.model.Controller;
 import edu.bsu.cs222.model.Model.InputParser;
 import edu.bsu.cs222.model.View.UserInterface;
 import net.minidev.json.JSONArray;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -21,6 +20,5 @@ public class WikiController {
 
         userInterface.printMessage(userInterfaceFormatter.getRedirectInfo(jsonInput));
         userInterface.printMessage(userInterfaceFormatter.formatRevisions(jsonInput));
-
     }
 }

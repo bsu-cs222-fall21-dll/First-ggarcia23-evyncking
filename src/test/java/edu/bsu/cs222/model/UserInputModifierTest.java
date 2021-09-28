@@ -3,7 +3,6 @@ package edu.bsu.cs222.model;
 import edu.bsu.cs222.model.Controller.InputManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 

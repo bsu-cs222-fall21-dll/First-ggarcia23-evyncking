@@ -4,11 +4,11 @@ import edu.bsu.cs222.model.Controller.UserInterfaceFormatter;
 import edu.bsu.cs222.model.Model.InputParser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.io.InputStream;
 
 public class UserInterfaceFormatterTest {
+
     @Test
     public void revisionFormatTest() throws IOException {
         InputParser inputParser = new InputParser();
