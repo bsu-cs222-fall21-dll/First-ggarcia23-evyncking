@@ -13,7 +13,7 @@ public class UserInput {
 
     private void checkCharIsEmpty(String title){
         if (title.equals("") || title.equals("\n")){
-            System.err.println("Name of Article is Required.");
+            System.err.println("Missing input...");
             System.exit(1);
         }
     }
