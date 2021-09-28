@@ -12,10 +12,7 @@ import java.io.InputStream;
 public class RedirectionTest {
     @Test
     public void redirectionTest() throws IOException {
-        InputStream sampleFileInputStream = Thread.currentThread().getContextClassLoader()
-                .getResourceAsStream("FrankZappa.json");
         UserInterfaceFormatter userInterfaceFormatterTest = new UserInterfaceFormatter();
-
         String testRedirectInfo = userInterfaceFormatterTest.getRedirectInfo(testInput());
         Assertions.assertEquals("Redirected to Frank Zappa.",testRedirectInfo);
     }

@@ -9,8 +9,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class WikipediaRevisionParser{
-    public ArrayList<WikipediaRevision> parse(JSONArray jsonFile) {
 
+    public ArrayList<WikipediaRevision> parse(JSONArray jsonFile) {
         JSONArray revisionsJSONArray = JsonPath.read(jsonFile, "$..revisions");
         return revisionList(revisionsJSONArray);
     }
