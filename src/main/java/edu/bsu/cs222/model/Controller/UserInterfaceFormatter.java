@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class UserInterfaceFormatter {
 
     public String getRedirectInfo(JSONArray jsonInput) {
-        RedirectParser redirectParser = new RedirectParser(jsonInput);
-        return redirectParser.parseRedirects();
+        RedirectParser redirectParser = new RedirectParser();
+        return redirectParser.checkForRedirect(jsonInput);
     }
 
 

@@ -5,19 +5,27 @@ import edu.bsu.cs222.model.View.UserInput;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class InputManager {
-    private String getUserInput(){
-        UserInput userInput = new UserInput();
-        return userInput.getTitle();
-
-
-    }
 
     public InputStream getArticle() throws IOException {
-        String title = getUserInput();
-        URLFormatter urlFormatter = new URLFormatter(title);
-        return urlFormatter.makeConnectionToURL();
+        UserInput userInput = new UserInput();
+        String title = modifyInput(userInput.getTitle());
+        URLFormatter urlFormatter = new URLFormatter();
+        return urlFormatter.makeConnectionToURL(title);
+    }
+
+    public String modifyInput(String userInput) {
+        String articleString = null;
+        try {
+            articleString = URLEncoder.encode(userInput, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return articleString;
     }
 
 }
