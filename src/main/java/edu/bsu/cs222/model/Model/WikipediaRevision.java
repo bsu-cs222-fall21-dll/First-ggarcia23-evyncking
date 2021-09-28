@@ -24,7 +24,6 @@ public class WikipediaRevision {
         char[] jsonArrayItems = jsonArray.toString().toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
 
-
         for(int i=2 ; i<=jsonArrayItems.length ; i++){
             if(jsonArrayItems[i] == '"'){
                 break;
@@ -32,8 +31,6 @@ public class WikipediaRevision {
                 stringBuilder.append(jsonArrayItems[i]);
             }
         }
-
-
         return stringBuilder.toString();
     }
 

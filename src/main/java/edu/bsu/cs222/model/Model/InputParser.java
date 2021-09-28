@@ -7,7 +7,6 @@ import java.io.InputStream;
 
 public class InputParser {
     public JSONArray parseJSON(InputStream dataStream) throws IOException {
-
         return JsonPath.read(dataStream, "$..query");
     }
 }
