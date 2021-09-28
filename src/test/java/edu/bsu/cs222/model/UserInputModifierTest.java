@@ -16,4 +16,13 @@ public class UserInputModifierTest {
         System.setIn(inputStream);
         Assertions.assertEquals("Kobe+Bryant", inputManager.modifyInput(userInput));
     }
+
+    @Test
+    public void testUserInputTwo() {
+        InputManager inputManager = new InputManager();
+        String userInput = "Kobe  Bryant ";
+        InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
+        System.setIn(inputStream);
+        Assertions.assertEquals("Kobe++Bryant+", inputManager.modifyInput(userInput));
+    }
 }
