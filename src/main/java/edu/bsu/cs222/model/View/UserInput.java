@@ -3,9 +3,7 @@ package edu.bsu.cs222.model.View;
 import java.util.Scanner;
 
 public class UserInput {
-    public String getTitle()  {
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
+    public String getTitle(String userInput)  {
         checkCharIsEmpty(userInput);
 
         return userInput;

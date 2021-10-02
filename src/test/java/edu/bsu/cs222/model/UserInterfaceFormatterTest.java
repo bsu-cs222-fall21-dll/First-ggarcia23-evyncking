@@ -20,10 +20,10 @@ public class UserInterfaceFormatterTest {
 
     private String testRevisionsString(){
 
-        return String.format("2021-09-19T01:09:23Z 75.172.213.218%n" +
-                "2021-09-19T00:54:29Z 75.172.213.218%n" +
-                "2021-09-18T23:53:23Z MusikBot II%n" +
-                "2021-09-18T12:33:00Z Anon423%n");
+        return String.format("09/19/2021 01:09:23 75.172.213.218%n" +
+                "09/19/2021 00:54:29 75.172.213.218%n" +
+                "09/18/2021 23:53:23 MusikBot II%n" +
+                "09/18/2021 12:33:00 Anon423%n");
     }
 
 }

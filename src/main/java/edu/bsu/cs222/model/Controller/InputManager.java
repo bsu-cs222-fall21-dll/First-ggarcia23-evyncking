@@ -11,9 +11,9 @@ import java.nio.charset.StandardCharsets;
 
 public class InputManager {
 
-    public InputStream getArticle() throws IOException {
+    public InputStream getArticle(String input) throws IOException {
         UserInput userInput = new UserInput();
-        String title = modifyInput(userInput.getTitle());
+        String title = modifyInput(userInput.getTitle(input));
         URLFormatter urlFormatter = new URLFormatter();
         return urlFormatter.makeConnectionToURL(title);
     }

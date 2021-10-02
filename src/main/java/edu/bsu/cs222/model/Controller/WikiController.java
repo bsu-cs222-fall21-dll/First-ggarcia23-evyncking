@@ -5,6 +5,7 @@ import edu.bsu.cs222.model.View.UserInterface;
 import net.minidev.json.JSONArray;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 public class WikiController {
     public void runProgram() throws IOException {
@@ -14,7 +15,9 @@ public class WikiController {
         InputParser jsonInputParser = new InputParser();
 
         System.out.println(userInterface.wikiUI());
-        InputStream inputStream = inputManager.getArticle();
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        InputStream inputStream = inputManager.getArticle(userInput);
 
         JSONArray jsonInput = jsonInputParser.parseJSON(inputStream);
 
