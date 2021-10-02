@@ -1,8 +1,6 @@
 package edu.bsu.cs222.model.Controller;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 public class WikipediaGUI extends Application {
     @Override
@@ -22,16 +21,31 @@ public class WikipediaGUI extends Application {
 
         HBox urlArea = new HBox(new Label("Article Name: "));
         urlArea.setAlignment(Pos.BASELINE_CENTER);
-        TextField textField = new TextField();
-        urlArea.getChildren().add(textField);
+
+        TextField inputTextField = new TextField();
+        urlArea.getChildren().add(inputTextField);
+
+        TextField outputField = new TextField();
+        outputField.setPrefSize(10,10);
+
         parent.getChildren().add(urlArea);
 
-        Button button = new Button("Search Wikipedia");
-        button.setOnAction(event -> System.out.println("I would access a class" + textField.getText() + " here"));
+        Button button = new Button("Search");
+        button.setOnAction(event -> {
+
+            if (inputTextField.getText().equals("") || inputTextField.getText().equals("\n")){
+                outputField.setText("Missing input...");
+                //System.exit(1);
+            } else {
+                outputField.setText("This is where the revisions of " + inputTextField.getText() + " would go");
+            }
+        });
+
         parent.getChildren().add(button);
+        parent.getChildren().add(outputField);
 
         primaryStage.setTitle("ONS Wikipedia Revision");
-        primaryStage.setScene(new Scene(parent, 350, 300));
+        primaryStage.setScene(new Scene(parent, 350, 250));
         primaryStage.show();
     }
 }
