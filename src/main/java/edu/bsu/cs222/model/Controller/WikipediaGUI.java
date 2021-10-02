@@ -16,6 +16,8 @@ public class WikipediaGUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         VBox parent = new VBox();
+        parent.setAlignment(Pos.BASELINE_CENTER);
+        parent.setSpacing(8);
         parent.getChildren().add(new Label("ONS Wikipedia Revision Parser"));
 
         HBox urlArea = new HBox(new Label("Article Name: "));
