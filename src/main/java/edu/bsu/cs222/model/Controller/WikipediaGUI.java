@@ -1,7 +1,6 @@
 package edu.bsu.cs222.model.Controller;
 
 import edu.bsu.cs222.model.Model.InputParser;
-import edu.bsu.cs222.model.Model.RedirectParser;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -20,7 +19,7 @@ import java.io.InputStream;
 
 public class WikipediaGUI extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         VBox parent = new VBox();
         parent.setAlignment(Pos.TOP_CENTER);
         parent.setSpacing(8);
@@ -39,8 +38,8 @@ public class WikipediaGUI extends Application {
 
         parent.getChildren().add(urlArea);
 
-        Button button = new Button("Search");
-        button.setOnAction(event -> {
+        Button search = new Button("Search");
+        search.setOnAction(event -> {
 
             UserInterfaceFormatter userInterfaceFormatter = new UserInterfaceFormatter();
             InputManager inputManager = new InputManager();
@@ -66,7 +65,13 @@ public class WikipediaGUI extends Application {
 
         });
 
-        parent.getChildren().add(button);
+        Button exit = new Button("Exit");
+        exit.setOnAction(event -> {
+            System.exit(0);
+        });
+
+        parent.getChildren().add(search);
+        parent.getChildren().add(exit);
         parent.getChildren().add(outputField);
 
         primaryStage.setTitle("ONS Wikipedia Revision");
