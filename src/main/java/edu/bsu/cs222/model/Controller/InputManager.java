@@ -2,7 +2,6 @@ package edu.bsu.cs222.model.Controller;
 
 import edu.bsu.cs222.model.Model.URLFormatter;
 import edu.bsu.cs222.model.View.UserInput;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;

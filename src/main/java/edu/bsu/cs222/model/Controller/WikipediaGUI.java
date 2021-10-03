@@ -46,16 +46,23 @@ public class WikipediaGUI extends Application {
             InputManager inputManager = new InputManager();
             InputParser jsonInputParser = new InputParser();
 
+            InputStream inputStream = null;
             try {
-                InputStream inputStream = inputManager.getArticle(inputTextField.getText());
-                JSONArray jsonInput = jsonInputParser.parseJSON(inputStream);
-
-                outputField.setText(String.valueOf(jsonInput));
-                outputField.setText(userInterfaceFormatter.formatRevisions(jsonInput));
-
+                inputStream = inputManager.getArticle(inputTextField.getText());
             } catch (IOException e) {
-
+                e.printStackTrace();
             }
+
+            JSONArray jsonInput = null;
+            try {
+                jsonInput = jsonInputParser.parseJSON(inputStream);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            outputField.setText(String.valueOf(jsonInput));
+            outputField.setText(userInterfaceFormatter.getRedirectInfo(jsonInput) +
+                    "\n" + userInterfaceFormatter.formatRevisions(jsonInput));
 
         });
 
