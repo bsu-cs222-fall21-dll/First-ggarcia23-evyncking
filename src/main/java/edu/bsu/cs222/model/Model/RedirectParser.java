@@ -9,8 +9,9 @@ public class RedirectParser {
         try {
             JSONArray result = JsonPath.read(jsonArray,"$..redirects");
             JSONArray redirection = JsonPath.read(result,"$..to");
-            String redirectionMessage = "Redirected to " + redirection.get(0).toString() + ".";
-            return redirectionMessage;
+            //String redirectionMessage = "Redirected to " + redirection.get(0).toString() + ".";
+            return String.format("Redirected to %s", redirection.get(0).toString());
+            //return redirectionMessage;
         }
         catch (IndexOutOfBoundsException indexOutOfBoundsException){
             return "";

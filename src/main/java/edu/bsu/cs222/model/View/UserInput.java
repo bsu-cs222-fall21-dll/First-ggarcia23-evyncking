@@ -1,7 +1,5 @@
 package edu.bsu.cs222.model.View;
 
-import java.util.Scanner;
-
 public class UserInput {
     public String getTitle(String userInput)  {
         checkCharIsEmpty(userInput);
