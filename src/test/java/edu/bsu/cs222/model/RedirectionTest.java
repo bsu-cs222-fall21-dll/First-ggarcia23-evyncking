@@ -13,7 +13,7 @@ public class RedirectionTest {
     public void redirectionTest() throws IOException {
         UserInterfaceFormatter userInterfaceFormatterTest = new UserInterfaceFormatter();
         String testRedirectInfo = userInterfaceFormatterTest.getRedirectInfo(testInput());
-        Assertions.assertEquals("Redirected to Frank Zappa.",testRedirectInfo);
+        Assertions.assertEquals("Redirected to Frank Zappa",testRedirectInfo);
     }
 
     private JSONArray testInput() throws IOException {
