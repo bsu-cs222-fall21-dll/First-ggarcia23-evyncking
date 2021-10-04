@@ -3,9 +3,6 @@ package edu.bsu.cs222.model.Model;
 import com.jayway.jsonpath.JsonPath;
 import net.minidev.json.JSONArray;
 
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
-
 public class WikipediaRevision {
     private JSONArray revisionContents;
 
@@ -36,7 +33,5 @@ public class WikipediaRevision {
         }
         return stringBuilder.toString();
     }
-
-
 
 }

@@ -21,6 +21,7 @@ public class InputManager {
         String articleString = null;
         try {
             articleString = URLEncoder.encode(userInput, StandardCharsets.UTF_8.toString());
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -28,3 +29,4 @@ public class InputManager {
     }
 
 }
+
