@@ -8,7 +8,6 @@ public class WikipediaRevisionParser{
 
     public ArrayList<WikipediaRevision> parse(JSONArray jsonFile) {
         JSONArray revisionsJSONArray = JsonPath.read(jsonFile, "$..revisions");
-        //checkIfArticleExists(revisionsJSONArray);
         return revisionList(revisionsJSONArray);
     }
 
