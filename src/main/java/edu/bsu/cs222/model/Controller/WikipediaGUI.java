@@ -1,5 +1,6 @@
 package edu.bsu.cs222.model.Controller;
 
+import edu.bsu.cs222.model.Model.GUISearchButton;
 import edu.bsu.cs222.model.Model.InputParser;
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -41,28 +42,19 @@ public class WikipediaGUI extends Application {
         Button search = new Button("Search");
         search.setOnAction(event -> {
 
+            GUISearchButton guiSearchButton = new GUISearchButton();
             UserInterfaceFormatter userInterfaceFormatter = new UserInterfaceFormatter();
-            InputManager inputManager = new InputManager();
-            InputParser jsonInputParser = new InputParser();
+            JSONArray jsonArray = null;
 
-            InputStream inputStream = null;
             try {
-                inputStream = inputManager.getArticle(inputTextField.getText());
+                jsonArray = guiSearchButton.getParseJSON(inputTextField);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-            JSONArray jsonInput = null;
-            try {
-                jsonInput = jsonInputParser.parseJSON(inputStream);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            outputField.setText(String.valueOf(jsonInput));
-            outputField.setText(userInterfaceFormatter.getRedirectInfo(jsonInput) +
-                    "\n" + userInterfaceFormatter.formatRevisions(jsonInput));
-
+            outputField.setText(String.valueOf(jsonArray));
+            outputField.setText(userInterfaceFormatter.getRedirectInfo(jsonArray) +
+                    "\n" + userInterfaceFormatter.formatRevisions(jsonArray));
         });
 
         Button exit = new Button("Exit");
