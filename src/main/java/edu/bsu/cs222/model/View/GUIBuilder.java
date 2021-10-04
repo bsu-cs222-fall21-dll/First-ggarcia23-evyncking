@@ -1,7 +1,7 @@
 package edu.bsu.cs222.model.View;
 
 import edu.bsu.cs222.model.Controller.UserInterfaceFormatter;
-import edu.bsu.cs222.model.Model.GUISearchButton;
+import edu.bsu.cs222.model.Controller.GUISearchButton;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -34,6 +34,9 @@ public class GUIBuilder extends Application {
         outputField.setPrefSize(350,400);
         outputField.setMaxSize(1000,1000);
 
+        TextArea errorMessage = new TextArea();
+        errorMessage.setPrefSize(10,10);
+
 
         parent.getChildren().add(urlArea);
 
@@ -59,11 +62,8 @@ public class GUIBuilder extends Application {
             System.exit(0);
         });
 
-        parent.getChildren().add(search);
-        parent.getChildren().add(exit);
-        parent.getChildren().add(outputField);
+        parent.getChildren().addAll(search, exit, outputField);
 
-        primaryStage.setTitle("ONS Wikipedia Revision");
         primaryStage.setScene(new Scene(parent, 370, 425));
         primaryStage.show();
     }

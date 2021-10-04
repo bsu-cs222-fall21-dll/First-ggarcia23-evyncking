@@ -12,10 +12,7 @@ import java.io.InputStream;
 public class GUIRedirectionTest {
     @Test
     public void GUIRedirection() throws IOException {
-        InputStream sampleFileInputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-        InputParser inputParser = new InputParser();
         UserInterfaceFormatter userInterfaceFormatterTest = new UserInterfaceFormatter();
-        JSONArray jsonArray = inputParser.parseJSON(sampleFileInputStream);
         String testRedirectInfo = userInterfaceFormatterTest.getRedirectInfo(testInput());
 
         String redirectionString = "Redirected to Frank Zappa";
@@ -31,11 +28,7 @@ public class GUIRedirectionTest {
 
     @Test
     public void revisionsTest() throws IOException {
-        InputStream sampleFileInputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.json");
-        InputParser inputParser = new InputParser();
         UserInterfaceFormatter userInterfaceFormatterTest = new UserInterfaceFormatter();
-
-        JSONArray jsonArray = inputParser.parseJSON(sampleFileInputStream);
 
         String testRevision = userInterfaceFormatterTest.formatRevisions(testInput());
         Assertions.assertEquals(revisionStringTest(), testRevision);
