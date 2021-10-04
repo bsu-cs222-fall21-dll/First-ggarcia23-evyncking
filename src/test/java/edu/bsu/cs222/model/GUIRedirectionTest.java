@@ -1,9 +1,7 @@
 package edu.bsu.cs222.model;
 
 import edu.bsu.cs222.model.Controller.UserInterfaceFormatter;
-import edu.bsu.cs222.model.Controller.WikipediaGUI;
 import edu.bsu.cs222.model.Model.InputParser;
-import javafx.stage.Stage;
 import net.minidev.json.JSONArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

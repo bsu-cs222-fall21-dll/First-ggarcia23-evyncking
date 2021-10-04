@@ -1,7 +1,7 @@
-package edu.bsu.cs222.model.Controller;
+package edu.bsu.cs222.model.View;
 
+import edu.bsu.cs222.model.Controller.UserInterfaceFormatter;
 import edu.bsu.cs222.model.Model.GUISearchButton;
-import edu.bsu.cs222.model.Model.InputParser;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,12 +15,10 @@ import javafx.stage.Stage;
 import net.minidev.json.JSONArray;
 
 import java.io.IOException;
-import java.io.InputStream;
 
-
-public class WikipediaGUI extends Application {
+public class GUIBuilder extends Application {
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         VBox parent = new VBox();
         parent.setAlignment(Pos.TOP_CENTER);
         parent.setSpacing(8);
@@ -41,7 +39,6 @@ public class WikipediaGUI extends Application {
 
         Button search = new Button("Search");
         search.setOnAction(event -> {
-
             GUISearchButton guiSearchButton = new GUISearchButton();
             UserInterfaceFormatter userInterfaceFormatter = new UserInterfaceFormatter();
             JSONArray jsonArray = null;

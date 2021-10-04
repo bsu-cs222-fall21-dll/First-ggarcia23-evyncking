@@ -28,4 +28,6 @@ javafx {
     version = '13.0.2'
 }
 
-mainClassName = 'edu.bsu.cs222.model.Controller.WikipediaGUI'
+application {
+    mainClassName = 'edu.bsu.cs222.model.View.GUIBuilder'
+}
