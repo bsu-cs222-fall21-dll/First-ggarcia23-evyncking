@@ -10,14 +10,19 @@ import java.io.InputStream;
 public class InputParser {
     public JSONArray parseJSON(InputStream dataStream) throws IOException {
         JSONArray jsonInput = JsonPath.read(dataStream, "$..query");
-        checkArticleExists(jsonInput);
+        checkIfArticleExists(jsonInput);
         return jsonInput;
     }
 
-    public void checkArticleExists(JSONArray jsonInput) {
-        JSONArray jsonArray = JsonPath.read(jsonInput, "$..missing");
-        System.err.println("Article Not Found");
-        System.exit(2);
+    private void checkIfArticleExists(JSONArray inputJson){
+        JSONArray checkingArray = JsonPath.read(inputJson,"$..user");
+
+        if (checkingArray.size()<=0){
+            System.err.println("Article Not Found...");
+            System.exit(2);
+        }
+
+
     }
 }
 

@@ -34,10 +34,6 @@ public class GUIBuilder extends Application {
         outputField.setPrefSize(350,400);
         outputField.setMaxSize(1000,1000);
 
-        TextArea errorMessage = new TextArea();
-        errorMessage.setPrefSize(10,10);
-
-
         parent.getChildren().add(urlArea);
 
         Button search = new Button("Search");
