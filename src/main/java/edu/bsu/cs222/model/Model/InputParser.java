@@ -14,20 +14,10 @@ public class InputParser {
         return jsonInput;
     }
 
-    private void checkArticleExists(JSONArray jsonInput) {
+    public void checkArticleExists(JSONArray jsonInput) {
         JSONArray jsonArray = JsonPath.read(jsonInput, "$..missing");
         System.err.println("Article Not Found");
         System.exit(2);
     }
 }
 
-//    private void checkIfPageExists(JSONArray inputJson){
-//        JSONArray checkingArray = JsonPath.read(inputJson,"$..user");
-//
-//        if (checkingArray.size()<=0){
-//            ErrorHandler errorHandler = new ErrorHandler();
-//            String errorMessage = errorHandler.SelectError(2);
-//            errorHandler.printError(errorMessage);
-//        }
-//
-//}
