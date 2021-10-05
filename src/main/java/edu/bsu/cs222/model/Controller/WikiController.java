@@ -17,10 +17,10 @@ public class WikiController {
         System.out.println(userInterface.wikiUI());
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
-        InputStream inputStream = inputManager.getArticle(userInput);
-        if (!inputStream.equals(true)) {
+        if (inputManager.getArticle(userInput).equals(false)) {
             System.exit(1);
         }
+        InputStream inputStream = inputManager.getArticle(userInput);
 
         JSONArray jsonInput = jsonInputParser.parseJSON(inputStream);
 

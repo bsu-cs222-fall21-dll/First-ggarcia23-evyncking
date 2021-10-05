@@ -46,7 +46,7 @@ public class GUIBuilder extends Application {
             } catch (IOException e) {
                 Alert networkAlert = new Alert(Alert.AlertType.ERROR);
                 networkAlert.setHeaderText("Error Code 3");
-                networkAlert.setContentText("Error Code 3: No internet connection found");
+                networkAlert.setContentText("Connection Error: Error Code 3");
                 networkAlert.showAndWait();
                 System.exit(3);
             }

@@ -20,7 +20,7 @@ public class GUISearchButton {
         if (Objects.equals(input.getText(), "")) {
             Alert inputAlert = new Alert(Alert.AlertType.ERROR);
             inputAlert.setHeaderText("Error Code 1");
-            inputAlert.setContentText("Error code 1: No input found, please enter article title");
+            inputAlert.setContentText("Input Not Found: Error Code 1");
             inputAlert.showAndWait();
             System.exit(1);
         }
@@ -28,7 +28,7 @@ public class GUISearchButton {
         if (!jsonInputParser.checkIfArticleExists(jsonArray)) {
             Alert articleAlert = new Alert(Alert.AlertType.ERROR);
             articleAlert.setHeaderText("Error Code 2");
-            articleAlert.setContentText("Error Code 2: No article found");
+            articleAlert.setContentText("Article Not Found: Error Code 2");
             articleAlert.showAndWait();
             System.exit(2);
         }
