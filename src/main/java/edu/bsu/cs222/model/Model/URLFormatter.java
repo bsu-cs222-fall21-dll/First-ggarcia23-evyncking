@@ -16,7 +16,7 @@ public class URLFormatter {
             return connection.getInputStream();
 
         } catch (IOException inputMissing) {
-            System.err.println("No Network Connection");
+            System.err.println("No Network Connection: Error Code 3");
             System.exit(3);
         }
         return null;

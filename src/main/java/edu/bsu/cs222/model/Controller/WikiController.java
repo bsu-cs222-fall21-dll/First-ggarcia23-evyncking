@@ -18,6 +18,9 @@ public class WikiController {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         InputStream inputStream = inputManager.getArticle(userInput);
+        if (!inputStream.equals(true)) {
+            System.exit(1);
+        }
 
         JSONArray jsonInput = jsonInputParser.parseJSON(inputStream);
 

@@ -14,15 +14,13 @@ public class InputParser {
         return jsonInput;
     }
 
-    private void checkIfArticleExists(JSONArray inputJson){
+    public Boolean checkIfArticleExists(JSONArray inputJson){
         JSONArray checkingArray = JsonPath.read(inputJson,"$..user");
-
         if (checkingArray.size()<=0){
-            System.err.println("Article Not Found...");
-            System.exit(2);
+            System.err.println("Article Not Found: Error Code 2");
+            return false;
         }
-
-
+        return true;
     }
 }
 

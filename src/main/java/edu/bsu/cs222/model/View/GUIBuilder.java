@@ -5,10 +5,7 @@ import edu.bsu.cs222.model.Controller.GUISearchButton;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -40,12 +37,18 @@ public class GUIBuilder extends Application {
         search.setOnAction(event -> {
             GUISearchButton guiSearchButton = new GUISearchButton();
             UserInterfaceFormatter userInterfaceFormatter = new UserInterfaceFormatter();
+
             JSONArray jsonArray = null;
 
             try {
                 jsonArray = guiSearchButton.getParseJSON(inputTextField);
+
             } catch (IOException e) {
-                e.printStackTrace();
+                Alert networkAlert = new Alert(Alert.AlertType.ERROR);
+                networkAlert.setHeaderText("Error Code 3");
+                networkAlert.setContentText("Error Code 3: No internet connection found");
+                networkAlert.showAndWait();
+                System.exit(3);
             }
 
             outputField.setText(String.valueOf(jsonArray));

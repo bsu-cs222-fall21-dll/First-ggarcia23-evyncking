@@ -7,11 +7,12 @@ public class UserInput {
         return userInput;
     }
 
-    private void checkCharIsEmpty(String title){
+    private boolean checkCharIsEmpty(String title){
         if (title.equals("") || title.equals("\n")){
-            System.err.println("Missing input...");
-            System.exit(1);
+            System.err.println("Missing Input: Error Code 1");
+            return false;
         }
+        return true;
     }
 
 }
